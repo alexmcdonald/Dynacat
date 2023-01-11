@@ -576,8 +576,12 @@ export default class DynacatTileWall extends LightningElement {
 
             // When accent color was not yet defined, define the variable
             if (!backgroundColor || backgroundColor.length == 0) {
-                this.template.host.style.setProperty('--backgroundColor', this.backgroundColor);
-                this._hasRendered = true;
+                try {
+                    this.template.host.style.setProperty('--backgroundColor', this.backgroundColor);
+                    this._hasRendered = true;
+                } catch(error) {
+                    console.log(error.message);
+                }
             }
 
         }
