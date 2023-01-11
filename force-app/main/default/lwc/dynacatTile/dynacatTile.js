@@ -49,12 +49,16 @@ export default class DynacatTile extends NavigationMixin(LightningElement) {
         if (!this._hasRendered2 && this.tile.badges.length > 0) {
             let lastBadge = this.template.querySelector('[data-badge="' + this.tile.badges.length + '"]');
             if (typeof lastBadge != "undefined") {
-                this.tile.badges.forEach((badge, index) => {
-                    let badgeEl = this.template.querySelector('[data-badge="' + (index + 1) + '"]');
-                    badgeEl.style.color = badge.color;
-                    badgeEl.style.backgroundColor = badge.bgColor;
-                });
-                this._hasRendered2 = true;
+                try {
+                    this.tile.badges.forEach((badge, index) => {
+                        let badgeEl = this.template.querySelector('[data-badge="' + (index + 1) + '"]');
+                        badgeEl.style.color = badge.color;
+                        badgeEl.style.backgroundColor = badge.bgColor;
+                    });
+                    this._hasRendered2 = true;
+                } catch (error) {
+                    console.log(error.message);
+                }
             }
         }
         if (!this._hasRendered) {
@@ -64,10 +68,14 @@ export default class DynacatTile extends NavigationMixin(LightningElement) {
 
             // When accent color was not yet defined, define the variable
             if (!background || background.length == 0) {
-                this.template.host.style.setProperty('--background', this.tile.tileBackground);
-                this.template.host.style.setProperty('--tileHeight', this.tile.tileHeight);
-                this._hasRendered = true;
-                this._setHeight = true;
+                try {
+                    this.template.host.style.setProperty('--background', this.tile.tileBackground);
+                    this.template.host.style.setProperty('--tileHeight', this.tile.tileHeight);
+                    this._hasRendered = true;
+                    this._setHeight = true;    
+                } catch(error) {
+                    console.log(error.message);
+                }
             }
 
         }
