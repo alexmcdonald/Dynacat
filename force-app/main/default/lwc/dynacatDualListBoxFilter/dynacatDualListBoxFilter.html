@@ -1,0 +1,17 @@
+<template>
+
+    <li data-id={xid} role="treeitem" tabindex="0">
+        <div class="slds-tree__item">
+            <div style="width:100%;" class="slds-grid slds-grid_align-spread">
+                <div class="slds-col slds-size_1-of-1">
+
+                    <lightning-dual-listbox data-id={xid} label={label} value={values} source-label="Available"
+                        selected-label="Selected" options={options}
+                        onchange={handleSelect} disable-reordering></lightning-dual-listbox>
+
+                </div>
+            </div>
+        </div>
+    </li>
+
+</template>

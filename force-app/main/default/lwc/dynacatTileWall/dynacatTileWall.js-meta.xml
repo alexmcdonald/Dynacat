@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <masterLabel>Dynacat: Tile Wall Catalog</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+
+            <!-- Name Field -->
+            <property name="deployment" type="String" default="" label="Dynacat Deployment Name"
+                description="Deployment field for the custom metadata config." />
+            <property name="name_Field0" required="false" type="String" label="Title Field API Name" />
+            <property name="size_Field0" type="String" label="Title Size"
+                datasource="body_regular,body_small,heading_large,heading_medium,heading_small"
+                default="body_regular" />
+            <property name="case_Field0" type="String" label="Title Case Display"
+                datasource="default,lowercase,uppercase" default="default" />
+            <property name="align_Field0" type="String" label="Title Alignment"
+                datasource="left,center,right" default="center" />
+
+            <!-- Dynacat & Display Fields -->
+            <property name="recordTypeNames" type="String" default="" label="Recordtype API Name"
+                description="(Optional) Comma-separated API Name/s for the Record Type/s being filtered" />
+            <property name="isActiveFieldName" type="String" default="" label="IsActive Field Name"
+                description="(Optional) Field Name on the target object (eg Product) that determines if the product is active. Can be omitted but must be a Checkbox field or formula if included." />
+            <property name="limitResults" type="Integer" label="Limit Displayed Records" default="12" />
+            <property name="orderBy" type="String" label="Order By"
+                description="Use SOQL Syntax for ordering eg. 'Name ASC'" />
+
+            <!-- Tile Wall Display Options -->
+            <property name="title" type="String" label="Title" />
+            <property name="iconName" type="String" label="Icon Name"
+                description="(Optional) Enter the icon name to appear in the header, eg. standard:account or utility:event" />
+            <property name="displayCount" type="Boolean" label="Display Record Count"
+                description="Display record count in title" />
+            <property name="allowSearch" type="Boolean" label="Allow Search" default="false" />
+            <property name="searchLabel" type="String" label="Search Label" default="Search" />
+            <property name="noResultsText" type="String" label="No Search Results Text"
+                default="No results found, try searching for something else!" />
+            <property name="columnsLarge" type="String" label="Tiles per Row (Desktop)"
+                datasource="1,2,3,4,6,12" default="4" />
+            <property name="columnsMedium" type="String" label="Tiles per Row (Tablet)"
+                datasource="1,2,3,4,6,12" default="3" />
+            <property name="columnsSmall" type="String" label="Tiles per Row (Mobile)"
+                datasource="1,2,3,4,6,12" default="1" />
+            <property name="backgroundColor" type="String" label="Tile Wall Background Color"
+                default="#FFFFFF" />
+            <property name="color" type="String" label="Tile Background Color" default="#FFFFFF" />
+            <property name="colorFieldName" type="String"
+                label="Tile Background Color Field API Name" />
+            <property name="imageURL" type="String" label="Tile Background Image URL" />
+            <property name="imageFieldName" type="String"
+                label="Tile Background Image Field API Name" />
+            <property name="size" type="String" label="Tile Background Image Size"
+                description="auto|length|cover|contain|initial|inherit" />
+            <property name="opacity" type="String" label="Tile Background Opacity"
+                description="Opacity doesn't work on iOS, tiles will fallback to default background color (no background image)." />
+
+            <!-- Fields to Display -->
+            <property name="name_Field1" type="String" label="Field 1 API Name" />
+            <property name="label_Field1" type="String" label="Field 1 Label" />
+            <property name="size_Field1" type="String" label="Field 1 Size"
+                datasource="body_regular,body_small,heading_large,heading_medium,heading_small"
+                default="body_regular" />
+            <property name="case_Field1" type="String" label="Field 1 Case Display"
+                datasource="default,lowercase,uppercase" default="default" />
+            <property name="align_Field1" type="String" label="Field 1 Alignment"
+                datasource="left,center,right" default="left" />
+
+            <property name="name_Field2" type="String" label="Field 2 API Name" />
+            <property name="label_Field2" type="String" label="Field 2 Label" />
+            <property name="size_Field2" type="String" label="Field 2 Size"
+                datasource="body_regular,body_small,heading_large,heading_medium,heading_small"
+                default="body_regular" />
+            <property name="case_Field2" type="String" label="Field 2 Case Display"
+                datasource="default,lowercase,uppercase" default="default" />
+            <property name="align_Field2" type="String" label="Field 2 Alignment"
+                datasource="left,center,right" default="left" />
+
+            <property name="name_Field3" type="String" label="Field 3 API Name" />
+            <property name="label_Field3" type="String" label="Field 3 Label" />
+            <property name="size_Field3" type="String" label="Field 3 Size"
+                datasource="body_regular,body_small,heading_large,heading_medium,heading_small"
+                default="body_regular" />
+            <property name="case_Field3" type="String" label="Field 3 Case Display"
+                datasource="default,lowercase,uppercase" default="default" />
+            <property name="align_Field3" type="String" label="Field 3 Alignment"
+                datasource="left,center,right" default="left" />
+
+            <property name="name_Field4" type="String" label="Field 4 API Name" />
+            <property name="label_Field4" type="String" label="Field 4 Label" />
+            <property name="size_Field4" type="String" label="Field 4 Size"
+                datasource="body_regular,body_small,heading_large,heading_medium,heading_small"
+                default="body_regular" />
+            <property name="case_Field4" type="String" label="Field 4 Case Display"
+                datasource="default,lowercase,uppercase" default="default" />
+            <property name="align_Field4" type="String" label="Field 4 Alignment"
+                datasource="left,center,right" default="left" />
+
+            <!-- Badges to Display -->
+            <property name="name_Badge1" type="String" label="Badge 1 API Name" />
+            <property name="label_Badge1" type="String" label="Badge 1 Label" />
+            <property name="color_Badge1" type="String" label="Badge 1 Color" default="#080707"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+            <property name="bgcolor_Badge1" type="String" label="Badge 1 BG Color" default="#ECEBEA"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+
+            <property name="name_Badge2" type="String" label="Badge 2 API Name" />
+            <property name="label_Badge2" type="String" label="Badge 2 Label" />
+            <property name="color_Badge2" type="String" label="Badge 2 Color" default="#080707"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+            <property name="bgcolor_Badge2" type="String" label="Badge 2 BG Color" default="#ECEBEA"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+
+            <property name="name_Badge3" type="String" label="Badge 3 API Name" />
+            <property name="label_Badge3" type="String" label="Badge 3 Label" />
+            <property name="color_Badge3" type="String" label="Badge 3 Color" default="#080707"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+            <property name="bgcolor_Badge3" type="String" label="Badge 3 BG Color" default="#ECEBEA"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+
+            <property name="name_Badge4" type="String" label="Badge 4 API Name" />
+            <property name="label_Badge4" type="String" label="Badge 4 Label" />
+            <property name="color_Badge4" type="String" label="Badge 4 Color" default="#080707"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+            <property name="bgcolor_Badge4" type="String" label="Badge 4 BG Color" default="#ECEBEA"
+                description="Use {{fieldname}} with a formula field for dynamic color selection." />
+
+            <!-- Other Less-used Properties -->
+            <property name="heightOption" type="String" label="Tile Height"
+                datasource="max-row,fixed,individual"
+                description="Max-Row: Tile auto-size height to fit contents, each tile in a row will be the same height; Fixed: Fixed at specified height; Individual: Each tile sized to fit content."
+                default="max-row" />
+            <property name="fixedHeight" type="String" label="Fixed Height (px)"
+                description="Height (pixels or %) if fixed, include px or %" />
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

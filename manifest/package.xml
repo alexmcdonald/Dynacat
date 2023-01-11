@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>DynacatAttributeComparable</members>
+        <members>DynacatAttSelectorComparable</members>
+        <members>DynacatAttSelectorController</members>
+        <members>DynacatCatalogController</members>
+        <members>DynacatCatalogFiltersController</members>
+        <members>DynacatServerCatalogController</members>
+        <members>DynacatTileWallController</members>
+
+        <members>ObjectFieldPickerController_Dynacat</members>
+        <members>PicklistValue_Dynacat</members>
+        <members>SObjectRetriever_Dynacat</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Dynacat</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Dynacat_Deployment__c</members>
+        <members>Dynacat_Filter__c</members>
+        <members>Dynacat_Attribute__c</members>
+        <members>Dynacat_Product__c</members>
+        <members>Dynacat_Record_Attribute__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Dynacat_Attribute__c</members>
+        <members>Dynacat_Product__c</members>
+        <members>Dynacat_Record_Attribute__c</members>
+        <members>Dynacat_Configurator</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Dynacat</members>
+        <members>Dynacat/IconChoice</members>
+        <members>Dynacat/IconProducts</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>Dynacat_Configurator</members>
+        <members>Update_Attribute_External_Id</members>
+        <name>FlowDefinition</name>
+    </types>
+    <types>
+        <members>Dynacat_Configurator</members>
+        <members>Update_Attribute_External_Id</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>dynacatFilterChanged</members>
+        <name>LightningMessageChannel</name>
+    </types>
+    <types>
+        <members>Dynacat_Attribute_Record_Page</members>
+        <members>Dynacat_Product_Record_Page</members>
+        <members>Dynacat_Product2_Record_Page</members>
+        <members>Dynacat_Record_Attribute_Record_Page</members>
+        <members>Dynacat_Configurator</members>
+        <members>Dynacat_Tile_Wall_Sample</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Dynacat_Attribute__c-Dynacat Attribute Layout</members>
+        <members>Dynacat_Product__c-Dynacat Product Layout</members>
+        <members>Dynacat_Product__c-Dynacat Product Community Layout</members>
+        <members>Dynacat_Record_Attribute__c-Dynacat Record Attribute Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Dynacat_Attribute__c.Record_Details</members>
+        <name>QuickAction</name>
+    </types>
+    <version>55.0</version>
+</Package>

@@ -1,0 +1,19 @@
+<template>
+
+    <template if:true={dataReady}>
+
+        <lightning-combobox name="sobject" label="Select SObject" value={_selectedSObject} placeholder="Select Object"
+            options={sObjects} onchange={handleSObjectChange} disabled={hideObject}></lightning-combobox>
+        <lightning-combobox name="field" label="Select Field" value={_selectedField} placeholder="Select Field"
+            options={fields} onchange={handleFieldChange}></lightning-combobox>
+
+        <template for:each={rFields} for:item="rField">
+
+            <lightning-combobox key={rField.key} data-index={rField.key} name={rField.key} label={rField.labelText} data-object={rField.referenceTo} value={rField.value}
+                placeholder="Select Field" options={rField.fields} onchange={handleRFieldChange}></lightning-combobox>
+
+        </template>
+
+    </template>
+
+</template>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Filters Datatable (Dynacat)</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="filters" type="@salesforce/schema/Dynacat_Filter__c[]" label="Filters" role="inputOnly"/>
+            <property name="selectedRecord" type="@salesforce/schema/Dynacat_Filter__c" label="Selected Record" role="outputOnly"/>
+            <property name="selectedId" type="String" label="Selected Record Id" role="outputOnly"/>
+            <property name="action" type="String" label="Action" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

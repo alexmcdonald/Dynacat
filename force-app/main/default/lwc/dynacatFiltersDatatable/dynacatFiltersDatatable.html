@@ -1,0 +1,11 @@
+<template>
+        <div class="slds-m-bottom_medium">
+            <template if:true={displayTable}>
+                <lightning-datatable key-field="Id" data={filters} columns={columns} hide-checkbox-column
+                column-widths-mode="auto" onrowaction={handleRowAction}></lightning-datatable>
+            </template>
+        </div>
+
+    <lightning-button label="Create New Filter" icon-name="action:new" variant="brand" onclick={handleNew}
+        class="slds-m-top_medium"></lightning-button>
+</template>

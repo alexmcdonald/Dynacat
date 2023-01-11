@@ -1,0 +1,41 @@
+<template>
+    <template if:true={dataReady}>
+
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:product" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            Records
+                        </h2>
+                    </div>
+                </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+
+                <div class="slds-grid slds-gutters slds-wrap">
+                    <template for:each={filteredRecords} for:item="record">
+                        <div key={record.id} class={columnClass}>
+                            <lightning-tile type="media" class="rec-tile slds-p-around_small">
+                                <lightning-icon slot="media" icon-name="standard:product"></lightning-icon>
+                                <p data-id={record.id} class="slds-truncate" title={record.name}
+                                    onclick={handleRecordClick}><a href="#">{record.name}</a></p>
+                            </lightning-tile>
+                        </div>
+                    </template>
+                </div>
+
+                <span class="slds-text-body_regular">{progressText}</span>
+                <template if:true={showPrevious}>
+                    <lightning-button name="Previous" label="Previous" onclick={handlePrevious} class="slds-m-left_small"></lightning-button>
+                </template>
+                <template if:true={showNext}>
+                    <lightning-button name="Next" label="Next" onclick={handleNext} class="slds-m-left_small"></lightning-button>
+                </template>
+            </div>
+        </article>
+    </template>
+</template>

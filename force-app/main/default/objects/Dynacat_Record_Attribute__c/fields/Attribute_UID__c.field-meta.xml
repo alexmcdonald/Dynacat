@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attribute_UID__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This isn&apos;t a unique Id, it stores the unique Id of the attribute being linked.</inlineHelpText>
+    <label>Attribute UID</label>
+    <length>55</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

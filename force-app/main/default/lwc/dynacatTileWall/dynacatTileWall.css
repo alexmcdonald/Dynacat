@@ -1,0 +1,3 @@
+.tile-wall {
+    background-color: var(--backgroundColor, #FFFFFF);
+}

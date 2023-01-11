@@ -1,0 +1,49 @@
+<template>
+
+    <lightning-tile data-id="tile" class="tile-style slds-tile slds-tile_board slds-box slds-p-around--small slds-m-around--small">
+
+        <div class={tileClass}>
+            <p data-id={tile.id} title={title} onclick={handleRecordClick}><a href="#">{title}</a>
+            </p>
+        </div>
+        <div class="slds-tile__detail slds-m-top--small">
+            <div class="slds-grid slds-wrap">
+                <template for:each={tile.badges} for:item="tileBadge" for:index="num">
+                    <template if:true={tileBadge.hasValue}>
+                        <span key={tileBadge.num} data-badge={tileBadge.num} 
+                            class="slds-badge slds-m-bottom_x-small slds-m-left_none slds-m-right_x-small">
+                            <template if:true={tileBadge.hasLabel}>{tileBadge.label}:</template>
+                            <strong><lightning-formatted-rich-text
+                                    value={tileBadge.value}></lightning-formatted-rich-text></strong>
+                        </span>
+                    </template>
+                </template>
+            </div>
+            <dl class="slds-list_stacked">
+
+                <template iterator:field={tile.fields}>
+                    <template if:false={field.first}>
+                        <template if:true={field.value.hasValue}>
+                            <div key={field.value.num}>
+                                <template if:true={field.value.hasLabel}>
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate"
+                                        title={field.value.label}>
+                                        {field.value.label}</dt>
+                                </template>
+                                <dd title={field.value.value} class={field.value.class}>
+                                    <lightning-formatted-rich-text
+                                        value={field.value.value}></lightning-formatted-rich-text>
+                                </dd>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+
+            </dl>
+        </div>
+
+    </lightning-tile>
+
+
+
+</template>

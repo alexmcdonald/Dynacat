@@ -1,0 +1,65 @@
+<template>
+
+    <fieldset class="slds-form-element">
+ 
+        <div class="slds-form-element__control">
+
+            <template for:each={choices} for:item="choice">
+
+
+                <div key={choice.value} class="slds-visual-picker slds-visual-picker_vertical">
+                    <input type="radio" id={choice.value} value={choice.value} name={labelField} data-id={choice.value}
+                        onclick={handleChange} />
+                    <label for={choice.value}>
+ 
+                        <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+ 
+                            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+                                <lightning-icon icon-name={iconName} size="medium" ></lightning-icon>
+                            </div>
+ 
+                            <div class="slds-media__body slds-p-left_small slds-p-top_xxx-small">
+                                <span class="slds-text-heading_small slds-m-bottom_x-small">{choice.label}</span>
+                                <span class="slds-text-title">{choice.summary}</span>
+                            </div>
+ 
+                        </span>
+                        <span class="icon-container slds-visual-picker__text-check">
+                            <lightning-icon icon-name="utility:check" size="x-small" variant="inverse">
+                            </lightning-icon>
+                        </span>
+                    </label>
+                </div>
+
+            </template>
+            <template if:true={createNew}>
+
+                <div class="slds-visual-picker slds-visual-picker_vertical">
+                    <input type="radio" id="createNew" value="createNew" name={labelField} data-id="createNew"
+                        onclick={handleChange} />
+                    <label for="createNew">
+ 
+                        <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+ 
+                            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+                                <lightning-icon icon-name={iconName} size="medium" ></lightning-icon>
+                            </div>
+ 
+                            <div class="slds-media__body slds-p-left_small">
+                                <span class="slds-text-heading_small">{createNewText}</span>
+                            </div>
+ 
+                        </span>
+                        <span class="icon-container slds-visual-picker__text-check">
+                            <lightning-icon icon-name="utility:check" size="x-small" variant="inverse">
+                            </lightning-icon>
+                        </span>
+                    </label>
+                </div>
+
+            </template>
+        </div>
+    </fieldset>
+
+
+</template>

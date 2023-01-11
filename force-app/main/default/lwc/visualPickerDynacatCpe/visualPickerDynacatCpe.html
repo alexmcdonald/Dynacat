@@ -1,0 +1,20 @@
+<template>
+    <lightning-input name="inputType" label="Object for Record Variable" value={inputType}
+        onchange={handleInputTypeChange}></lightning-input>
+    <lightning-combobox name="recordCollection" label="Record Variable (Collection)" value={recordCollection}
+        options={valueOptions} onchange={handleValueChange}></lightning-combobox>
+    <lightning-input name="labelField" data-id="labelField" label="Label Field" value={labelField}
+        onchange={handleChange}></lightning-input>
+    <lightning-input name="valueField" data-id="valueField" label="Value Field" value={valueField}
+        onchange={handleChange}></lightning-input>
+    <lightning-input name="summaryField" data-id="summaryField" label="Summary Field" value={summaryField}
+        onchange={handleChange}></lightning-input>
+    <lightning-input name="iconName" data-id="iconName" label="Icon Name" value={iconName}
+        onchange={handleChange}></lightning-input>
+    <lightning-input type="checkbox" name="createNew" data-id="createNew" label="Create New" checked={createNew}
+        onchange={handleBooleanChange}></lightning-input>
+    <template if:true={createNew}>
+        <lightning-input name="createNewText" data-id="createNewText" label="Create New Text" value={createNewText}
+        onchange={handleChange}></lightning-input>
+    </template>
+</template>

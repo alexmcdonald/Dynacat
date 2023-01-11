@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Object &amp; Field Picker (Dynacat)</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="fieldTypes" type="String" label="Valid Field Types" role="inputOnly"/>
+            <property name="selectedSObject" type="String" label="SObject" />
+            <property name="selectedField" type="String" label="Field" /> 
+            <property name="hideObject" type="Boolean" label="Hide Object Selector" default="false" />
+            <property name="fieldType" type="String" label="Type" role="outputOnly"/>
+            <property name="picklistValues" type="String" label="Picklist Values" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

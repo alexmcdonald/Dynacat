@@ -1,0 +1,29 @@
+<template>
+
+    <li data-id={xid} role="treeitem" tabindex="0">
+        <div class="slds-tree__item">
+            <div style="width:100%;" class="slds-grid slds-grid_align-spread">
+                <div class="slds-col slds-size_2-of-3">
+                    <div class="slds-form-element" style="width:100%;">
+                        <label class="slds-form-element__label slds-m-bottom_none">
+                            <legend class="slds-form-element__legend slds-form-element__label slds-m-bottom_none">{label}</legend>
+                        </label>
+                        <div class="slds-grid slds-gutters_x-small" style="width: 100%; margin-top: -6px;">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input data-id={xid} data-input={xid} data-name="start" label="From" value={startValue} onchange={handleChange} type="date"></lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input data-id={xid} data-input={xid} data-name="finish" label="To" value={finishValue} onchange={handleChange} type="date"></lightning-input>                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-button-icon icon-name="utility:delete" variant="bare" alternative-text="Clear Radio"
+                        title="Clear" onclick={handleClear} class="slds-m-left_medium"></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </li>
+
+</template>

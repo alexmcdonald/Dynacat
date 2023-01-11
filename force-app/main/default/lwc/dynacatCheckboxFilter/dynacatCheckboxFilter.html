@@ -1,0 +1,77 @@
+<template>
+
+    <template if:true={haschildren}>
+        <li data-id={xid} aria-expanded="true" aria-level={arialevel} role="treeitem" tabindex="0">
+            <div class="slds-tree__item">
+                <lightning-button-icon data-id={xid} data-path={path} onclick={handleBranchClick} aria-expanded="true"
+                    icon-name="utility:chevronright" variant="bare" alternative-text="Expand Tree Branch"
+                    class="slds-m-right_x-small" title="Expand"></lightning-button-icon>
+                <template if:true={selectable}>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <div class="slds-checkbox">
+                                <input type="checkbox" data-level={level} id={xid} data-id={xid} data-path={path}
+                                    onchange={handleCheckboxClick} checked={checked} />
+                                <label class="slds-checkbox__label" for={xid}>
+                                    <span class="slds-checkbox_faux"></span>
+                                    <span class="slds-form-element__label">{label}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template if:false={selectable}>
+                    <span class="slds-has-flexi-truncate">
+                        <span class="slds-tree__item-label slds-truncate" title={label}>
+                            <h1>{label}</h1>
+                        </span>
+                    </span>
+                </template>
+            </div>
+            <ul role="group" data-ul={xid}>
+
+                <template for:each={children} for:item="child">
+
+                    <c-dynacat-checkbox-filter key={child.id} root={root} xid={child.id} label={child.label} checked={child.checked}
+                        indeterminate={child.indeterminate} level={child.level} children={child._children} haschildren={child.hasChildren}
+                        oncheckboxclick={handleChildCheckboxClick} selectable={child.selectable} path={child.path} type={type}>
+                    </c-dynacat-checkbox-filter>
+
+                </template>
+
+            </ul>
+        </li>
+    </template>
+    <template if:false={haschildren}>
+        <li aria-level={arialevel} role="treeitem" tabindex="0">
+            <div class="slds-tree__item">
+                <lightning-button-icon aria-hidden="true" icon-name="utility:chevronright" variant="bare"
+                    alternative-text="Expand Tree Branch" class="slds-m-right_x-small slds-hidden" title="Expand">
+                </lightning-button-icon>
+                <template if:true={selectable}>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <div class="slds-checkbox">
+                                <input type="checkbox" data-level={level} id={xid} data-id={xid} data-path={path}
+                                    onchange={handleCheckboxClick} checked={checked} />
+                                <label class="slds-checkbox__label" for={xid}>
+                                    <span class="slds-checkbox_faux"></span>
+                                    <span class="slds-form-element__label">{label}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template if:false={selectable}>
+                    <span class="slds-has-flexi-truncate">
+                        <span class="slds-tree__item-label slds-truncate" title={label}>
+                            <h1>{label}</h1>
+                        </span>
+                    </span>
+                </template>
+            </div>
+        </li>
+    </template>
+
+
+</template>

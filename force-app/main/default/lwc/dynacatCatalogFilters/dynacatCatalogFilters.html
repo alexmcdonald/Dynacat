@@ -1,0 +1,84 @@
+<template>
+    <template if:true={dataReady}>
+
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:choice" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            Filters
+                        </h2>
+                    </div>
+                </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <div class="slds-tree_container filters" style="max-width:100%;">
+                    <ul class="slds-tree" role="tree">
+
+                        <template for:each={attributeList} for:item="attribute">
+
+                            <!-- Section Heading -->
+                            <template if:true={attribute.isSection}>
+                                <li key={attribute.id} data-id={xid} role="treeitem" tabindex="0">
+                                    <div class="slds-tree__item">
+                                        <div class="slds-text-heading_small">{attribute.label}</div>
+                                    </div>
+                                </li>
+                            </template>
+
+                            <!-- Nested Checkbox Style Filter -->
+                            <template if:true={attribute.isCheckbox}>
+                                <c-dynacat-checkbox-filter key={attribute.id} root={attribute.id} xid={attribute.id}
+                                    label={attribute.label} level={attribute.level} data-level={attribute.level}
+                                    path={attribute.path} children={attribute._children} checked={attribute.checked}
+                                    indeterminate={attribute.indeterminate} haschildren={attribute.hasChildren}
+                                    selectable={attribute.selectable} type={attribute.type}
+                                    oncheckboxclick={handleCheckboxClick}></c-dynacat-checkbox-filter>
+                            </template>
+
+                            <!-- Radio Button Style Filter-->
+                            <template if:true={attribute.isRadio}>
+                                <c-dynacat-radio-filter key={attribute.id} xid={attribute.id} label={attribute.label}
+                                    level={attribute.level} children={attribute._children} type={attribute.type}
+                                    onsingleselect={handleSingleSelect}></c-dynacat-radio-filter>
+                            </template>
+
+                            <!-- Picklist (Combobox) Style Filter-->
+                            <template if:true={attribute.isPicklist}>
+                                <c-dynacat-picklist-filter key={attribute.id} xid={attribute.id} label={attribute.label}
+                                    level={attribute.level} children={attribute._children} type={attribute.type}
+                                    onsingleselect={handleSingleSelect}></c-dynacat-picklist-filter>
+                            </template>
+
+                            <!-- Multi-Select Picklist (Dual-List Box) Style Filter-->
+                            <template if:true={attribute.isMSPicklist}>
+                                <c-dynacat-dual-list-box-filter key={attribute.id} xid={attribute.id}
+                                    label={attribute.label} level={attribute.level} children={attribute._children}
+                                    type={attribute.type} onmultiselect={handleMultiSelect}></c-dynacat-dual-list-box-filter>
+                            </template>
+
+                            <!-- Range Style Filter -->
+                            <template if:true={attribute.isRange}>
+                                <c-dynacat-range-filter key={attribute.id} xid={attribute.id} label={attribute.label}
+                                    level={attribute.level} min={attribute.rangeMin} max={attribute.rangeMax} type={attribute.type}
+                                    onrangechange={handleRangeChange}>
+                                </c-dynacat-range-filter>
+                            </template>
+
+                            <!-- Date Filter -->
+                            <template if:true={attribute.isDate}>
+                                <c-dynacat-date-filter key={attribute.id} xid={attribute.id} label={attribute.label}
+                                    level={attribute.level} type={attribute.type} ondatechange={handleDateChange}></c-dynacat-date-filter>
+                            </template>
+
+                        </template>
+
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </template>
+</template>

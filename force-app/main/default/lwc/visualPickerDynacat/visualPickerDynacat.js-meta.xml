@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Visual Picker (Dynacat)</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-visual-picker-dynacat-cpe">
+            <propertyType name="T" extends="SObject" label="Input Type" description="Generic sObject data type used for input sObject properties" />
+            <property name="recordCollection" type="{T[]}" label="Record Collection" role="inputOnly" />
+            <property name="labelField" type="String" label="Label Field" role="inputOnly" />
+            <property name="valueField" type="String" label="Value Field" role="inputOnly" />
+            <property name="summaryField" type="String" label="Summary Field" role="inputOnly" />
+            <property name="iconName" type="String" label="Icon Name" role="inputOnly" />
+            <property name="createNew" type="Boolean" label="Create New Option" role="inputOnly" />
+            <property name="createNewText" type="String" label="Create New Text" role="inputOnly" />
+            <property name="value" type="String" label="Value" role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

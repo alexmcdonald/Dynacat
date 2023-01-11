@@ -1,0 +1,12 @@
+.tile-style {
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--background, #ffffff);
+    height: var(--tileHeight, initial);
+}
+
+.hideMe {
+    display: none !important;
+}

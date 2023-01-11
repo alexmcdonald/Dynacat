@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Dynamic Catalog Filters</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Dynacat</label>
+    <navType>Standard</navType>
+    <tabs>Dynacat_Configurator</tabs>
+    <tabs>Dynacat_Tile_Wall_Sample</tabs>
+    <tabs>Dynacat_Attribute__c</tabs>
+    <tabs>Dynacat_Record_Attribute__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Dynacat_UtilityBar</utilityBar>
+</CustomApplication>

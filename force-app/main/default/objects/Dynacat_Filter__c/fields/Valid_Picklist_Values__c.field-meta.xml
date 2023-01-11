@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valid_Picklist_Values__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>(Optional) Comma-separated picklist values for the filter. If ommitted, all picklist values for the field will be used.</inlineHelpText>
+    <label>Valid Picklist Values</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

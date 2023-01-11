@@ -1,0 +1,11 @@
+.rec-tile {
+    background-color: rgb(242, 242, 242);
+}
+
+.rec-tile-inverse {
+    background-color: rgb(22, 50, 92);
+}
+
+.tileGrid {
+    background-color: #ffffff;
+}

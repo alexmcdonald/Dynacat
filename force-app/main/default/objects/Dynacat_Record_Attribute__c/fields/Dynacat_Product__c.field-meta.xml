@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynacat_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Dynacat Product</label>
+    <referenceTo>Dynacat_Product__c</referenceTo>
+    <relationshipLabel>Record Attributes</relationshipLabel>
+    <relationshipName>Dynacat_Product_Attributes</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

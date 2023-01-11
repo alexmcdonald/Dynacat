@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Sends selected filters between the Filter and Catalog components.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>These are the currently applied filters</description>
+        <fieldName>filters</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Dynacat Filter Changed</masterLabel>
+</LightningMessageChannel>

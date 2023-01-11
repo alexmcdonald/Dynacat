@@ -1,0 +1,71 @@
+<template>
+	<template if:true={notConfigured}>
+		<div style="background-color:#ffffff;" class="slds-p-around_medium">
+			<h1 class="slds-text-heading_medium">Thank's for using Dynacat Tilewall. Please enter the Dynacat Deployment Name and Title field as a minimum to begin displaying records.</h1>
+		</div>
+	</template>
+	<template if:true={dataReady}>
+
+		<article class="tile-wall slds-card">
+
+			<template if:true={title}>
+				<div class="slds-card__header slds-grid">
+					<header class="slds-media slds-media_center slds-has-flexi-truncate">
+						<template if:true={iconName}>
+							<div class="slds-media__figure">
+								<lightning-icon icon-name={iconName} size="small"></lightning-icon>
+							</div>
+						</template>
+						<div class="slds-media__body">
+							<h2 class="slds-card__header-title">
+								{title}
+								<template if:true={displayCount}>&nbsp;({count})</template>
+							</h2>
+						</div>
+					</header>
+				</div>
+			</template>
+
+			<div class="slds-card__body slds-card__body_inner">
+
+				<template if:true={allowSearch}>
+					<div class="slds-m-vertical--small">
+						<div class="slds-text-heading_small">{searchLabel}</div>
+						<lightning-input data-id="search-box" name="search-box" type="search" label={searchLabel}
+							variant="label-hidden" onchange={handleSearch}></lightning-input>
+					</div>
+
+					<template if:true={noResults}>
+						{noResultsText}
+					</template>
+				</template>
+
+				<template if:false={noResults}>
+
+					<lightning-layout pull-to-boundary="small" vertical-align="stretch" multiple-rows="true">
+						<template for:each={tiles} for:item="tile" for:index="index">
+							<lightning-layout-item key={tile.id} class="slds-item tile-item" size="12" small-device-size={sizeSmall}
+								medium-device-size={sizeMedium} large-device-size={sizeLarge}>
+								<c-dynacat-tile tile={tile}></c-dynacat-tile>
+							</lightning-layout-item>
+						</template>
+					</lightning-layout>
+					
+					<span class="slds-text-body_regular">{progressText}</span>
+					<template if:true={showPrevious}>
+						<lightning-button name="Previous" label="Previous" onclick={handlePrevious}
+							class="slds-m-left_small"></lightning-button>
+					</template>
+					<template if:true={showNext}>
+						<lightning-button name="Next" label="Next" onclick={handleNext}
+							class="slds-m-left_small"></lightning-button>
+					</template>
+
+				</template>
+
+			</div>
+
+		</article>
+
+	</template>
+</template>
