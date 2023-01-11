@@ -376,9 +376,9 @@ export default class DynacatTileWall extends LightningElement {
             const fieldArray = fieldname.split('.');
             const objPart = fieldArray[0];
             const valPart = fieldArray[1];
-            return record[objPart][valPart];
+            return (record[objPart] && record[objPart][valPart]) ? record[objPart][valPart] : '';
         } else {
-            return record[fieldname];
+            return (record[fieldname]) ? record[fieldname] : '';
         }
     }
 
