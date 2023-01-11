@@ -202,6 +202,10 @@
         <tab>Dynacat_Record_Attribute__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <tabSettings>
+        <tab>Dynacat_Tile_Wall_Sample</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
     <userPermissions>
         <enabled>true</enabled>
         <name>RunFlow</name>
