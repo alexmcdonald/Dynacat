@@ -31,6 +31,7 @@
         <members>Dynacat_Product__c</members>
         <members>Dynacat_Record_Attribute__c</members>
         <members>Dynacat_Configurator</members>
+        <members>Dynacat_Tile_Wall_Sample</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -63,7 +64,7 @@
         <members>Dynacat_Product2_Record_Page</members>
         <members>Dynacat_Record_Attribute_Record_Page</members>
         <members>Dynacat_Configurator</members>
-        <members>Dynacat_Tile_Wall_Sample</members>
+        <members>Dynacat_Tilewall_Sample</members>
         <name>FlexiPage</name>
     </types>
     <types>
@@ -76,6 +77,11 @@
     <types>
         <members>Dynacat_Attribute__c.Record_Details</members>
         <name>QuickAction</name>
+    </types>
+    <types>
+        <members>Dynacat_Admin_Permissions</members>
+        <members>Dynacat_Viewer_Permissions</members>
+        <name>PermissionSet</name>
     </types>
     <version>55.0</version>
 </Package>

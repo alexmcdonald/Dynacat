@@ -17,5 +17,4 @@
     <tabs>Dynacat_Attribute__c</tabs>
     <tabs>Dynacat_Record_Attribute__c</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>Dynacat_UtilityBar</utilityBar>
 </CustomApplication>
